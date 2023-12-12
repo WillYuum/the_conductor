@@ -1,4 +1,4 @@
-#The Conductor
+# The Conductor
 
 A rhythm game focused on learning rythym mechanics. The Conductor class directs beats, triggering events, and synchronizing game elements to explore rhythm game architecture.
 
