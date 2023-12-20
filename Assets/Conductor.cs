@@ -99,8 +99,14 @@ public class Conductor : MonoBehaviour
         };
     }
 
-    public bool CurrentlyOnBeat()
+    public bool CurrentlyNearBeat()
     {
-        return Math.Abs(SongPosition - lastBeat) < Crotchet / 2;
+        float forgiveWindowBeforeBeat = Crotchet * 0.25f;
+        float forgiveWindowAfterBeat = Crotchet * 0.35f;
+
+        bool nearBeforeBeat = Math.Abs(SongPosition - lastBeat) < forgiveWindowBeforeBeat;
+        bool nearAfterBeat = Math.Abs(SongPosition - (lastBeat + Crotchet)) < forgiveWindowAfterBeat;
+
+        return nearBeforeBeat || nearAfterBeat;
     }
 }

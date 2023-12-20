@@ -31,10 +31,8 @@ public class ClicksOnBeatLoop : MonoBehaviour
 
     private void CheckIfClickedOnBeat()
     {
-        if (_conductor.CurrentlyOnBeat())
+        if (_conductor.CurrentlyNearBeat())
         {
-            Debug.Log("Clicked on beat!");
-
             GameObject text = new("Text");
             text.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
             Text textMesh = text.AddComponent<Text>();
