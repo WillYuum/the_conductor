@@ -98,4 +98,9 @@ public class Conductor : MonoBehaviour
             DSPTime = AudioSettings.dspTime
         };
     }
+
+    public bool CurrentlyOnBeat()
+    {
+        return Math.Abs(SongPosition - lastBeat) < Crotchet / 2;
+    }
 }
